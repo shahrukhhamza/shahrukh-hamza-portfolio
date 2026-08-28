@@ -19,7 +19,7 @@
 <meta name="description" content="AI Automation Engineer building agentic AI systems, integrations, and full-stack apps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,67 +52,12 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="hero">
-    <svg class="hero__graph" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(15,23,42,0.05)" stroke-width="1"/>
-        </pattern>
-        <linearGradient id="flowWarm" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#FF6B4D" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#FF6B4D" stop-opacity="1"/>
-          <stop offset="100%" stop-color="#FF6B4D" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="flowCool" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#4FD8C4" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#4FD8C4" stop-opacity="1"/>
-          <stop offset="100%" stop-color="#4FD8C4" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-
-      <rect width="1200" height="620" fill="url(#grid)"/>
-
-      <!-- connector paths -->
-      <g fill="none" stroke-width="1.4">
-        <path id="path1" class="edge" d="M 860 100 C 930 100, 930 190, 980 190"/>
-        <path id="path2" class="edge" d="M 980 190 C 900 190, 900 320, 830 320"/>
-        <path id="path3" class="edge" d="M 830 320 C 920 320, 920 440, 980 440"/>
-        <path id="path4" class="edge" d="M 980 440 C 900 440, 900 540, 830 540"/>
-      </g>
-
-      <!-- flow pulses -->
-      <g>
-        <circle class="pulse pulse--warm" r="3.5"><animateMotion dur="4.5s" repeatCount="indefinite" path="M 860 100 C 930 100, 930 190, 980 190"/></circle>
-        <circle class="pulse pulse--cool" r="3.5"><animateMotion dur="4.5s" begin="1.1s" repeatCount="indefinite" path="M 980 190 C 900 190, 900 320, 830 320"/></circle>
-        <circle class="pulse pulse--warm" r="3.5"><animateMotion dur="4.5s" begin="2.2s" repeatCount="indefinite" path="M 830 320 C 920 320, 920 440, 980 440"/></circle>
-        <circle class="pulse pulse--cool" r="3.5"><animateMotion dur="4.5s" begin="3.3s" repeatCount="indefinite" path="M 980 440 C 900 440, 900 540, 830 540"/></circle>
-      </g>
-
-      <!-- nodes -->
-      <g transform="translate(860,100)"><g class="node" style="animation-delay:.15s">
-        <circle r="5" class="node__dot node__dot--cool"/>
-        <text class="node__label" x="14" y="4">manual process</text>
-      </g></g>
-      <g transform="translate(980,190)"><g class="node" style="animation-delay:.3s">
-        <circle r="6" class="node__dot node__dot--warm"/>
-        <text class="node__label" x="15" y="4">agent</text>
-      </g></g>
-      <g transform="translate(830,320)"><g class="node" style="animation-delay:.45s">
-        <circle r="5" class="node__dot node__dot--cool"/>
-        <text class="node__label" x="-14" y="4" text-anchor="end">integration</text>
-      </g></g>
-      <g transform="translate(980,440)"><g class="node" style="animation-delay:.6s">
-        <circle r="6" class="node__dot node__dot--warm"/>
-        <text class="node__label" x="15" y="4">sync layer</text>
-      </g></g>
-      <g transform="translate(830,540)"><g class="node" style="animation-delay:.75s">
-        <circle r="5" class="node__dot node__dot--cool"/>
-        <text class="node__label" x="-14" y="4" text-anchor="end">time saved</text>
-      </g></g>
-    </svg>
-
     <div class="hero__content">
       <p class="eyebrow">AI Automation Engineer</p>
-      <h1 class="hero__headline">I build systems that keep working<br>when things don't go to plan.</h1>
+      <h1 class="hero__headline">
+        <span class="line-mask"><span class="line-inner">I build systems that keep working</span></span>
+        <span class="line-mask"><span class="line-inner">when things don't go to plan.</span></span>
+      </h1>
       <p class="hero__sub">Agentic AI, workflow automation, and full-stack engineering — for the parts of a business that are still held together by hand.</p>
       <div class="hero__actions">
         <a href="#projects" class="btn btn--primary">See the work</a>
@@ -120,6 +65,16 @@
       </div>
       <div class="hero__stack" aria-label="Tools and platforms">
         <span>n8n</span><span>Gemini</span><span>OpenAI / Claude</span><span>GoHighLevel</span><span>Elation EMR</span><span>Supabase</span>
+      </div>
+    </div>
+
+    <div class="hero__photo">
+      <div class="hero__photo-frame">
+        <img src="profile.webp" alt="Shahrukh Hamza" class="hero__photo-img">
+      </div>
+      <div class="hero__photo-caption">
+        <span class="hero__photo-name">Shahrukh Hamza</span>
+        <span class="hero__photo-role">3+ years shipping production AI systems</span>
       </div>
     </div>
   </section>
@@ -135,39 +90,26 @@
         <div class="about__text">
           <p>I build AI-powered products and automation systems — the kind that take something manual, fragile, or disconnected and turn it into something that just works.</p>
           <p>My work sits at the intersection of agentic AI, workflow automation, and full-stack engineering: connecting systems that were never designed to talk to each other, building AI agents that make decisions mid-workflow, and shipping the software around them so it's actually usable.</p>
-          <p>The part I care about most is what happens when things don't go as planned — when the AI is wrong, when two systems disagree, when the happy path breaks. That's usually where the real engineering is.</p>
+          <p>The part I care about most is what happens when things don't go as planned — when the AI is wrong, when two systems disagree, when the happy path breaks.</p>
+
+          <blockquote class="about__quote">
+            Most engineers build for the happy path.<br><span>I build for what happens when it breaks.</span>
+          </blockquote>
         </div>
         <div class="about__proof">
           <div class="proof__item">
-            <svg class="proof__glyph" viewBox="0 0 32 32" width="28" height="28">
-              <line x1="8" y1="24" x2="8" y2="8" stroke="rgba(18,20,28,0.14)" stroke-width="1.4"/>
-              <circle cx="8" cy="24" r="3.5" fill="var(--accent-flow)"/>
-              <circle cx="8" cy="16" r="3.5" fill="var(--accent-primary)"/>
-              <circle cx="8" cy="8" r="3.5" fill="var(--accent-flow)"/>
-              <line x1="14" y1="8" x2="26" y2="8" stroke="rgba(18,20,28,0.14)" stroke-width="1.4" stroke-dasharray="2 3"/>
-              <line x1="14" y1="16" x2="22" y2="16" stroke="rgba(18,20,28,0.14)" stroke-width="1.4" stroke-dasharray="2 3"/>
-            </svg>
-            <span class="proof__num" data-count-to="17" data-suffix="+">0+</span>
-            <span class="proof__label">live production automations shipped in a single healthcare integration</span>
+            <span class="proof__tag">01 / Scale</span>
+            <span class="proof__num" data-count-to="40" data-suffix="+">0+</span>
+            <span class="proof__label">live production automations shipped across real business workflows</span>
           </div>
           <div class="proof__item">
-            <svg class="proof__glyph" viewBox="0 0 32 32" width="28" height="28">
-              <line x1="6" y1="26" x2="26" y2="26" stroke="rgba(18,20,28,0.14)" stroke-width="1.4"/>
-              <rect x="8" y="18" width="4" height="8" fill="rgba(18,20,28,0.16)"/>
-              <rect x="15" y="12" width="4" height="14" fill="var(--accent-primary)"/>
-              <rect x="22" y="6" width="4" height="20" fill="var(--accent-flow)"/>
-            </svg>
+            <span class="proof__tag">02 / Performance</span>
             <span class="proof__num">30–40%</span>
             <span class="proof__label">dashboard performance improvement after a backend migration &amp; rebuild</span>
           </div>
           <div class="proof__item">
-            <svg class="proof__glyph" viewBox="0 0 32 32" width="28" height="28">
-              <circle cx="7" cy="16" r="5" fill="var(--accent-primary)"/>
-              <circle cx="25" cy="16" r="5" fill="var(--accent-flow)"/>
-              <path d="M13 13 L20 13 M20 13 L17 10 M20 13 L17 16" stroke="rgba(18,20,28,0.35)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M19 19 L12 19 M12 19 L15 16 M12 19 L15 22" stroke="rgba(18,20,28,0.35)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="proof__num">CRM ↔ EMR</span>
+            <span class="proof__tag">03 / Integration</span>
+            <span class="proof__num">CRM &harr; EMR</span>
             <span class="proof__label">two systems that had never synced, connected via OAuth2 &amp; webhooks</span>
           </div>
         </div>
@@ -183,20 +125,42 @@
         <h2>Where this has been put to work</h2>
       </div>
 
-      <div class="exp-card">
-        <div class="exp-card__head">
-          <div>
-            <h3>AI Automation Engineer</h3>
-            <p class="exp-card__org">Trilles AI</p>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div class="exp-card__head">
+            <div>
+              <h3>AI Automation Engineer</h3>
+              <p class="exp-card__org">Trilles AI</p>
+            </div>
+            <p class="exp-card__date">Jul 2026 — Present</p>
           </div>
-          <p class="exp-card__date">Jul 2026 — Present</p>
+
+          <ul class="exp-card__list">
+            <li><strong>CRM–EMR Integration.</strong> Built and deployed n8n workflows integrating GoHighLevel (GHL) with Elation EMR via OAuth2 and REST APIs — live two-way sync of patient records, tags, and appointments across 17+ production automations.</li>
+            <li><strong>Healthcare Report Generation System.</strong> Built the auth, admin dashboard, and patient-classification modules; designed a hybrid regex + local LLM (Gemma 3) extraction pipeline to map clinical data accurately from source documents.</li>
+            <li><strong>Client Proposal Management Platform.</strong> Migrated the backend to Supabase, added engagement analytics, closed critical security gaps, and improved dashboard performance by roughly 30–40%.</li>
+            <li><strong>SEO Content Automation Pipeline.</strong> Designed an end-to-end automated workflow (n8n, DataForSEO, Claude API, Surfer SEO, Shopify Admin API) covering keyword research, content generation, and compliance auditing.</li>
+          </ul>
         </div>
-        <ul class="exp-card__list">
-          <li><strong>CRM–EMR Integration.</strong> Built and deployed n8n workflows integrating GoHighLevel (GHL) with Elation EMR via OAuth2 and REST APIs — live two-way sync of patient records, tags, and appointments across 17+ production automations.</li>
-          <li><strong>Healthcare Report Generation System.</strong> Built the auth, admin dashboard, and patient-classification modules; designed a hybrid regex + local LLM (Gemma 3) extraction pipeline to map clinical data accurately from source documents.</li>
-          <li><strong>Client Proposal Management Platform.</strong> Migrated the backend to Supabase, added engagement analytics, closed critical security gaps, and improved dashboard performance by roughly 30–40%.</li>
-          <li><strong>SEO Content Automation Pipeline.</strong> Designed an end-to-end automated workflow (n8n, DataForSEO, Claude API, Surfer SEO, Shopify Admin API) covering keyword research, content generation, and compliance auditing.</li>
-        </ul>
+
+        <div class="exp-card">
+          <div class="exp-card__head">
+            <div>
+              <h3>Self-Employed Developer</h3>
+              <p class="exp-card__org">Freelance / Independent</p>
+            </div>
+            <p class="exp-card__date">2023 — Jul 2026</p>
+          </div>
+
+          <ul class="exp-card__list">
+            <li><strong>Outreach &amp; Lead-Gen Automation.</strong> Built an AI-driven LinkedIn outreach system (n8n, Heyreach, Supabase, Next.js) with automated reply classification for B2B lead generation.</li>
+            <li><strong>Fintech Automation.</strong> Designed an automated bookkeeping pipeline (Python, Supabase/Postgres, Plaid, OpenAI) — full schema architecture and data QA for financial reconciliation.</li>
+            <li><strong>Document Intelligence Pipeline.</strong> Built a two-stage LLM extraction + deterministic rendering system converting structured source documents into polished client-facing reports.</li>
+            <li><strong>Lending Workflow Automation.</strong> Shipped an n8n + Flask form-filling service auto-populating multiple SBA/URLA/PFS lending forms directly from structured property data.</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -207,12 +171,18 @@
       <div class="section__head">
         <p class="section__tag">03 — Selected Work</p>
         <h2>Systems I've designed and shipped</h2>
-        <p class="section__intro">Independent products, built end to end — architecture, implementation, and deployment.</p>
+        <p class="section__intro">Independent products — conceived, architected, and shipped solo.</p>
+      </div>
+
+      <div class="case-filter" role="tablist" aria-label="Filter projects by category">
+        <button class="case-filter__btn is-active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+        <button class="case-filter__btn" data-filter="automation" role="tab" aria-selected="false">Automation &amp; Agentic AI</button>
+        <button class="case-filter__btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack Apps</button>
       </div>
 
       <div class="case-list">
 
-        <article class="case">
+        <article class="case" data-category="automation">
           <div class="case__art" style="--tint: var(--accent-primary-tint)">
             <svg viewBox="0 0 480 320" class="case__svg">
               <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
@@ -240,6 +210,7 @@
             </svg>
           </div>
           <div class="case__body">
+            <span class="case__category">Automation &amp; Agentic AI</span>
             <span class="case__index">01</span>
             <h3>AI Meeting Copilot</h3>
             <p class="case__desc">Sits inside a live meeting and thinks alongside you — reads the conversation as it happens, flags risks the moment they surface, suggests the next question, tracks action items, and has a summary ready before the call ends.</p>
@@ -256,7 +227,7 @@
           </div>
         </article>
 
-        <article class="case case--reverse">
+        <article class="case case--reverse" data-category="automation">
           <div class="case__art" style="--tint: var(--accent-flow-tint)">
             <svg viewBox="0 0 480 320" class="case__svg">
               <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
@@ -278,6 +249,7 @@
             </svg>
           </div>
           <div class="case__body">
+            <span class="case__category">Automation &amp; Agentic AI</span>
             <span class="case__index">02</span>
             <h3>ReFab Revolution — Ops Automation</h3>
             <p class="case__desc">AI voice-agent system for a sustainable textile-recycling business. Calls, approvals, and record-keeping run as one connected system instead of separate manual steps — including automatic vendor-invoice verification when something looks off.</p>
@@ -294,7 +266,7 @@
           </div>
         </article>
 
-        <article class="case">
+        <article class="case" data-category="fullstack">
           <div class="case__art" style="--tint: var(--accent-primary-tint)">
             <svg viewBox="0 0 480 320" class="case__svg">
               <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
@@ -323,6 +295,7 @@
             </svg>
           </div>
           <div class="case__body">
+            <span class="case__category">Full-Stack Apps</span>
             <span class="case__index">03</span>
             <h3>Zynth — AI Trading Intelligence</h3>
             <p class="case__desc">Full-stack SaaS platform for trade journaling and analysis — authentication, analytics dashboards, and AI-assisted reviews that turn raw trade logs into structured insight.</p>
@@ -339,7 +312,7 @@
           </div>
         </article>
 
-        <article class="case case--reverse">
+        <article class="case case--reverse" data-category="fullstack">
           <div class="case__art" style="--tint: var(--accent-flow-tint)">
             <svg viewBox="0 0 480 320" class="case__svg">
               <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
@@ -365,6 +338,7 @@
             </svg>
           </div>
           <div class="case__body">
+            <span class="case__category">Full-Stack Apps</span>
             <span class="case__index">04</span>
             <h3>AI Anomaly Detection System</h3>
             <p class="case__desc">Security-monitoring platform trained on Isolation Forest models, with dashboards and role-based access so the right person sees the right alert — not just a flat log of noise.</p>
@@ -423,26 +397,74 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section class="section" id="contact">
+  <section class="section section--inverted" id="contact">
     <div class="section__inner contact">
       <div class="section__head">
         <p class="section__tag">05 — Contact</p>
         <h2>Let's talk</h2>
       </div>
-      <p class="contact__line">Happy to talk AI, automation, or full-stack work anytime. Just send a message.</p>
-      <div class="contact__links">
-        <a href="mailto:shahrukhamza770@gmail.com" class="contact__card">
-          <span class="contact__label">Email</span>
-          <span class="contact__value">shahrukhamza770@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/shahrukh-hamza-91a12828a" target="_blank" rel="noopener" class="contact__card">
-          <span class="contact__label">LinkedIn</span>
-          <span class="contact__value">/in/shahrukh-hamza-91a12828a</span>
-        </a>
-        <a href="https://github.com/shahrukhhamza" target="_blank" rel="noopener" class="contact__card">
-          <span class="contact__label">GitHub</span>
-          <span class="contact__value">github.com/shahrukhhamza</span>
-        </a>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__line">Have a system that needs building — or one that's already broken? Tell me what you're working on.</p>
+          <div class="contact__links">
+            <a href="mailto:shahrukhamza770@gmail.com" class="contact__card">
+              <span class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              <span class="contact__text">
+                <span class="contact__label">Email</span>
+                <span class="contact__value">shahrukhamza770@gmail.com</span>
+              </span>
+              <span class="contact__arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/shahrukh-hamza-91a12828a" target="_blank" rel="noopener" class="contact__card">
+              <span class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><line x1="7.5" y1="10" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="0.6" fill="currentColor"/><path d="M11.5 16.5v-4a2.5 2.5 0 0 1 5 0v4"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/></svg>
+              </span>
+              <span class="contact__text">
+                <span class="contact__label">LinkedIn</span>
+                <span class="contact__value">/in/shahrukh-hamza-91a12828a</span>
+              </span>
+              <span class="contact__arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </a>
+            <a href="https://github.com/shahrukhhamza" target="_blank" rel="noopener" class="contact__card">
+              <span class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.1 6.8 9.4.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.6 1 1.5 1 2.6 0 3.8-2.4 4.6-4.6 4.9.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5C19.1 20.1 22 16.4 22 12c0-5.5-4.5-10-10-10z"/></svg>
+              </span>
+              <span class="contact__text">
+                <span class="contact__label">GitHub</span>
+                <span class="contact__value">github.com/shahrukhhamza</span>
+              </span>
+              <span class="contact__arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contactForm" action="https://formspree.io/f/xbgjjdgy" method="POST">
+          <div class="form__row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form__row">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form__row">
+            <label for="cf-message">What are you building?</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary form__submit">
+            <span class="form__submit-text">Send message</span>
+          </button>
+          <p class="form__status" id="formStatus" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>

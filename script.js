@@ -31,23 +31,28 @@ const spyObserver = new IntersectionObserver((entries) => {
 
 spySections.forEach(section => spyObserver.observe(section));
 
-// Hero canvas parallax — the workflow graph gently follows the cursor
-const hero = document.querySelector('.hero');
-const heroGraph = document.querySelector('.hero__graph');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
 
-if (hero && heroGraph && !prefersReducedMotion && !isCoarsePointer) {
-  const maxOffset = 12;
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const relX = (e.clientX - rect.left) / rect.width - 0.5;
-    const relY = (e.clientY - rect.top) / rect.height - 0.5;
-    heroGraph.style.transform = `translate(${relX * maxOffset}px, ${relY * maxOffset}px)`;
-  });
-  hero.addEventListener('mouseleave', () => {
-    heroGraph.style.transform = 'translate(0px, 0px)';
-  });
+// Hero photo: subtle parallax while scrolling past the hero
+// (moves the whole photo+caption block together — moving just the frame
+// caused it to slide over its own caption text, which was a real bug)
+const heroPhotoBlock = document.querySelector('.hero__photo');
+const heroSection = document.querySelector('.hero');
+if (heroPhotoBlock && heroSection && !prefersReducedMotion) {
+  let ticking = false;
+  function updateHeroParallax() {
+    const rect = heroSection.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+      heroPhotoBlock.style.transform = `translateY(${Math.max(rect.top, -400) * -0.08}px)`;
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeroParallax);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // Mobile nav toggle
@@ -90,6 +95,27 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => revealObserver.observe(el));
 
+// Project category filter
+const filterButtons = document.querySelectorAll('.case-filter__btn');
+const caseArticles = document.querySelectorAll('.case[data-category]');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-selected', 'true');
+
+    const filter = btn.dataset.filter;
+    caseArticles.forEach(article => {
+      const match = filter === 'all' || article.dataset.category === filter;
+      article.classList.toggle('is-filtered-out', !match);
+    });
+  });
+});
+
 // Count-up animation for stat numbers
 function animateCount(el) {
   const target = parseFloat(el.dataset.countTo);
@@ -118,3 +144,52 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 countTargets.forEach(el => countObserver.observe(el));
+
+
+// ================= PREMIUM INTERACTIONS =================
+// Hero headline reveal is now pure CSS (masked line-reveal on static markup) —
+// no JS text-splitting needed. Simpler, more robust, less "trying too hard."
+
+// (Cursor-spotlight glow, 3D tilt, and magnetic buttons intentionally removed —
+//  those effects are now a recognizable "AI-generated portfolio" tell. Restraint
+//  reads as more considered than motion for its own sake.)
+
+
+// ================= CONTACT FORM SUBMISSION =================
+// Uses Formspree (free, no backend needed) — replace the form's `action`
+// URL in index.html with your own endpoint from formspree.io
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('.form__submit');
+  const submitText = contactForm.querySelector('.form__submit-text');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending…';
+    statusEl.textContent = '';
+    statusEl.className = 'form__status';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        statusEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg><span>Got it — I read every message myself. I\'ll be in touch soon.</span>';
+        statusEl.classList.add('is-success');
+        contactForm.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      statusEl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Something went wrong on my end — please email me directly instead.</span>';
+      statusEl.classList.add('is-error');
+    } finally {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Send message';
+    }
+  });
+}
