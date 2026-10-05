@@ -17,99 +17,148 @@
 <meta name="twitter:description" content="Agentic AI, workflow automation, and full-stack engineering — built and shipped end to end.">
 <meta name="twitter:image" content="https://shahrukh-hamza-portfolio.vercel.app/og-image.png">
 <meta name="description" content="AI Automation Engineer building agentic AI systems, integrations, and full-stack apps.">
+<meta name="theme-color" content="#0C0C0D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+<!-- Preloader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__label">Initialising</span>
+    <span class="loader__count"><span id="loaderCount">0</span><i>%</i></span>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <span class="loader__name">Shahrukh Hamza</span>
+  </div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- Global effects -->
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__dot"></span>
+  <span class="cursor__ring"><span class="cursor__shape"></span><span class="cursor__label" id="cursorLabel"></span></span>
+</div>
 <div class="progress" id="progress"></div>
 
 <header class="nav" id="nav">
-  <a href="#hero" class="nav__mark">SH<span class="nav__dot">.</span></a>
+  <a href="#hero" class="nav__mark" data-magnetic>SH<span class="nav__dot">.</span></a>
   <nav class="nav__links">
     <a href="#about" data-nav="about">About</a>
     <a href="#experience" data-nav="experience">Experience</a>
     <a href="#projects" data-nav="projects">Projects</a>
     <a href="#skills" data-nav="skills">Skills</a>
-    <a href="#contact" class="nav__cta" data-nav="contact">Contact</a>
+    <span class="nav__pill" id="navPill"></span>
   </nav>
+  <a href="#contact" class="nav__cta" data-nav="contact" data-magnetic><span>Let's talk</span></a>
   <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
+    <span></span><span></span>
   </button>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
+  <a href="#about"><i>01</i>About</a>
+  <a href="#experience"><i>02</i>Experience</a>
+  <a href="#projects"><i>03</i>Projects</a>
+  <a href="#skills"><i>04</i>Skills</a>
+  <a href="#contact"><i>05</i>Contact</a>
 </div>
 
 <main>
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="edge-glow edge-glow--left" aria-hidden="true"></div>
+    <div class="edge-glow edge-glow--right" aria-hidden="true"></div>
+
     <div class="hero__content">
-      <p class="eyebrow">AI Automation Engineer</p>
-      <h1 class="hero__headline">
-        <span class="line-mask"><span class="line-inner">I build systems that keep working</span></span>
-        <span class="line-mask"><span class="line-inner">when things don't go to plan.</span></span>
+      <p class="eyebrow"><span class="eyebrow__pulse"></span>Available for new projects</p>
+      <h1 class="hero__headline" id="heroHeadline" aria-label="I build systems that keep working when things don't go to plan.">
+        <span class="split-line">I build <em class="grad">systems</em> that</span>
+        <span class="split-line">keep working when</span>
+        <span class="split-line">things <span class="strike">don't</span> go to plan.</span>
       </h1>
+      <p class="hero__role"><span class="hero__role-prefix">&gt;</span> <span id="roleText">AI Automation Engineer</span><span class="caret"></span></p>
       <p class="hero__sub">Agentic AI, workflow automation, and full-stack engineering — for the parts of a business that are still held together by hand.</p>
       <div class="hero__actions">
-        <a href="#projects" class="btn btn--primary">See the work</a>
-        <a href="#contact" class="btn btn--ghost">Get in touch</a>
-      </div>
-      <div class="hero__stack" aria-label="Tools and platforms">
-        <span>n8n</span><span>Gemini</span><span>OpenAI / Claude</span><span>GoHighLevel</span><span>Elation EMR</span><span>Supabase</span>
+        <a href="#projects" class="btn btn--primary" data-magnetic><span>See the work</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn--ghost" data-magnetic><span>Get in touch</span></a>
       </div>
     </div>
 
-    <div class="hero__photo">
-      <div class="hero__photo-frame">
-        <img src="profile.webp" alt="Shahrukh Hamza" class="hero__photo-img">
+    <div class="hero__visual">
+      <div class="portrait" id="portrait">
+        <canvas class="portrait__orb" id="orb" aria-hidden="true"></canvas>
+        <div class="portrait__frame">
+          <img src="profile.webp" alt="Shahrukh Hamza" class="portrait__img">
+        </div>
+        <div class="chip chip--1"><i></i>n8n</div>
+        <div class="chip chip--2"><i></i>Gemini</div>
+        <div class="chip chip--3"><i></i>Claude / OpenAI</div>
+        <div class="chip chip--4"><i></i>Supabase</div>
+        <div class="portrait__tag">
+          <strong>Shahrukh Hamza</strong>
+          <span>3+ years shipping production AI systems</span>
+        </div>
       </div>
-      <div class="hero__photo-caption">
-        <span class="hero__photo-name">Shahrukh Hamza</span>
-        <span class="hero__photo-role">3+ years shipping production AI systems</span>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span>Scroll</a>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <section class="marquee" aria-label="Tools and platforms">
+    <div class="marquee__row">
+      <div class="marquee__track">
+        <span>n8n</span><b>✦</b><span>Agentic AI</span><b>✦</b><span>Gemini</span><b>✦</b><span>OpenAI / Claude</span><b>✦</b><span>GoHighLevel</span><b>✦</b><span>Elation EMR</span><b>✦</b><span>Supabase</span><b>✦</b>
+        <span>n8n</span><b>✦</b><span>Agentic AI</span><b>✦</b><span>Gemini</span><b>✦</b><span>OpenAI / Claude</span><b>✦</b><span>GoHighLevel</span><b>✦</b><span>Elation EMR</span><b>✦</b><span>Supabase</span><b>✦</b>
+      </div>
+    </div>
+    <div class="marquee__row marquee__row--rev">
+      <div class="marquee__track">
+        <span>Webhooks</span><b>✦</b><span>OAuth2</span><b>✦</b><span>React</span><b>✦</b><span>Flask</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>Python</span><b>✦</b><span>REST APIs</span><b>✦</b>
+        <span>Webhooks</span><b>✦</b><span>OAuth2</span><b>✦</b><span>React</span><b>✦</b><span>Flask</span><b>✦</b><span>PostgreSQL</span><b>✦</b><span>Python</span><b>✦</b><span>REST APIs</span><b>✦</b>
       </div>
     </div>
   </section>
 
   <!-- ================= ABOUT ================= -->
   <section class="section" id="about">
-    <div class="section__inner about">
+    <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag">01 — About</p>
-        <h2>What I actually do</h2>
+        <p class="section__tag" data-scramble>01 — About</p>
+        <h2 class="split-words">What I actually do</h2>
       </div>
       <div class="about__grid">
         <div class="about__text">
-          <p>I build AI-powered products and automation systems — the kind that take something manual, fragile, or disconnected and turn it into something that just works.</p>
-          <p>My work sits at the intersection of agentic AI, workflow automation, and full-stack engineering: connecting systems that were never designed to talk to each other, building AI agents that make decisions mid-workflow, and shipping the software around them so it's actually usable.</p>
-          <p>The part I care about most is what happens when things don't go as planned — when the AI is wrong, when two systems disagree, when the happy path breaks.</p>
+          <p class="reveal">I build AI-powered products and automation systems — the kind that take something manual, fragile, or disconnected and turn it into something that just works.</p>
+          <p class="reveal">My work sits at the intersection of agentic AI, workflow automation, and full-stack engineering: connecting systems that were never designed to talk to each other, building AI agents that make decisions mid-workflow, and shipping the software around them so it's actually usable.</p>
+          <p class="reveal">The part I care about most is what happens when things don't go as planned — when the AI is wrong, when two systems disagree, when the happy path breaks.</p>
 
-          <blockquote class="about__quote">
-            Most engineers build for the happy path.<br><span>I build for what happens when it breaks.</span>
+          <blockquote class="about__quote reveal">
+            Most engineers build for the happy path.<br><span class="grad">I build for what happens when it breaks.</span>
           </blockquote>
         </div>
         <div class="about__proof">
-          <div class="proof__item">
+          <div class="proof reveal spot">
             <span class="proof__tag">01 / Scale</span>
-            <span class="proof__num" data-count-to="40" data-suffix="+">0+</span>
+            <span class="proof__num grad" data-count-to="40" data-suffix="+">0+</span>
             <span class="proof__label">live production automations shipped across real business workflows</span>
           </div>
-          <div class="proof__item">
+          <div class="proof reveal spot">
             <span class="proof__tag">02 / Performance</span>
-            <span class="proof__num">30–40%</span>
+            <span class="proof__num grad">30–40%</span>
             <span class="proof__label">dashboard performance improvement after a backend migration &amp; rebuild</span>
           </div>
-          <div class="proof__item">
+          <div class="proof reveal spot">
             <span class="proof__tag">03 / Integration</span>
-            <span class="proof__num">CRM &harr; EMR</span>
+            <span class="proof__num grad">CRM &harr; EMR</span>
             <span class="proof__label">two systems that had never synced, connected via OAuth2 &amp; webhooks</span>
           </div>
         </div>
@@ -118,60 +167,64 @@
   </section>
 
   <!-- ================= EXPERIENCE ================= -->
-  <section class="section section--alt" id="experience">
+  <section class="section" id="experience">
     <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag">02 — Experience</p>
-        <h2>Where this has been put to work</h2>
+        <p class="section__tag" data-scramble>02 — Experience</p>
+        <h2 class="split-words">Where this has been put to work</h2>
       </div>
 
-      <div class="exp-list">
+      <div class="timeline" id="timeline">
+        <div class="timeline__rail"><span id="timelineFill"></span></div>
 
-        <div class="exp-card">
-          <div class="exp-card__head">
-            <div>
-              <h3>AI Automation Engineer</h3>
-              <p class="exp-card__org">Trilles AI</p>
+        <div class="exp reveal">
+          <span class="exp__node"></span>
+          <div class="exp__card spot">
+            <div class="exp__head">
+              <div>
+                <h3>AI Automation Engineer</h3>
+                <p class="exp__org">Trilles AI</p>
+              </div>
+              <p class="exp__date">Jul 2026 — Present</p>
             </div>
-            <p class="exp-card__date">Jul 2026 — Present</p>
+            <ul class="exp__list">
+              <li><strong>CRM–EMR Integration.</strong> Built and deployed n8n workflows integrating GoHighLevel (GHL) with Elation EMR via OAuth2 and REST APIs — live two-way sync of patient records, tags, and appointments across 17+ production automations.</li>
+              <li><strong>Healthcare Report Generation System.</strong> Built the auth, admin dashboard, and patient-classification modules; designed a hybrid regex + local LLM (Gemma 3) extraction pipeline to map clinical data accurately from source documents.</li>
+              <li><strong>Client Proposal Management Platform.</strong> Migrated the backend to Supabase, added engagement analytics, closed critical security gaps, and improved dashboard performance by roughly 30–40%.</li>
+              <li><strong>SEO Content Automation Pipeline.</strong> Designed an end-to-end automated workflow (n8n, DataForSEO, Claude API, Surfer SEO, Shopify Admin API) covering keyword research, content generation, and compliance auditing.</li>
+            </ul>
           </div>
-
-          <ul class="exp-card__list">
-            <li><strong>CRM–EMR Integration.</strong> Built and deployed n8n workflows integrating GoHighLevel (GHL) with Elation EMR via OAuth2 and REST APIs — live two-way sync of patient records, tags, and appointments across 17+ production automations.</li>
-            <li><strong>Healthcare Report Generation System.</strong> Built the auth, admin dashboard, and patient-classification modules; designed a hybrid regex + local LLM (Gemma 3) extraction pipeline to map clinical data accurately from source documents.</li>
-            <li><strong>Client Proposal Management Platform.</strong> Migrated the backend to Supabase, added engagement analytics, closed critical security gaps, and improved dashboard performance by roughly 30–40%.</li>
-            <li><strong>SEO Content Automation Pipeline.</strong> Designed an end-to-end automated workflow (n8n, DataForSEO, Claude API, Surfer SEO, Shopify Admin API) covering keyword research, content generation, and compliance auditing.</li>
-          </ul>
         </div>
 
-        <div class="exp-card">
-          <div class="exp-card__head">
-            <div>
-              <h3>Self-Employed Developer</h3>
-              <p class="exp-card__org">Freelance / Independent</p>
+        <div class="exp reveal">
+          <span class="exp__node"></span>
+          <div class="exp__card spot">
+            <div class="exp__head">
+              <div>
+                <h3>Self-Employed Developer</h3>
+                <p class="exp__org">Freelance / Independent</p>
+              </div>
+              <p class="exp__date">2023 — Jul 2026</p>
             </div>
-            <p class="exp-card__date">2023 — Jul 2026</p>
+            <ul class="exp__list">
+              <li><strong>Outreach &amp; Lead-Gen Automation.</strong> Built an AI-driven LinkedIn outreach system (n8n, Heyreach, Supabase, Next.js) with automated reply classification for B2B lead generation.</li>
+              <li><strong>Fintech Automation.</strong> Designed an automated bookkeeping pipeline (Python, Supabase/Postgres, Plaid, OpenAI) — full schema architecture and data QA for financial reconciliation.</li>
+              <li><strong>Document Intelligence Pipeline.</strong> Built a two-stage LLM extraction + deterministic rendering system converting structured source documents into polished client-facing reports.</li>
+              <li><strong>Lending Workflow Automation.</strong> Shipped an n8n + Flask form-filling service auto-populating multiple SBA/URLA/PFS lending forms directly from structured property data.</li>
+            </ul>
           </div>
-
-          <ul class="exp-card__list">
-            <li><strong>Outreach &amp; Lead-Gen Automation.</strong> Built an AI-driven LinkedIn outreach system (n8n, Heyreach, Supabase, Next.js) with automated reply classification for B2B lead generation.</li>
-            <li><strong>Fintech Automation.</strong> Designed an automated bookkeeping pipeline (Python, Supabase/Postgres, Plaid, OpenAI) — full schema architecture and data QA for financial reconciliation.</li>
-            <li><strong>Document Intelligence Pipeline.</strong> Built a two-stage LLM extraction + deterministic rendering system converting structured source documents into polished client-facing reports.</li>
-            <li><strong>Lending Workflow Automation.</strong> Shipped an n8n + Flask form-filling service auto-populating multiple SBA/URLA/PFS lending forms directly from structured property data.</li>
-          </ul>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ================= PROJECTS ================= -->
   <section class="section" id="projects">
-    <div class="section__inner">
+    <div class="section__inner section__inner--wide">
       <div class="section__head">
-        <p class="section__tag">03 — Selected Work</p>
-        <h2>Systems I've designed and shipped</h2>
-        <p class="section__intro">Independent products — conceived, architected, and shipped solo.</p>
+        <p class="section__tag" data-scramble>03 — Selected Work</p>
+        <h2 class="split-words">Systems I've designed and shipped</h2>
+        <p class="section__intro reveal">Independent products — conceived, architected, and shipped solo.</p>
       </div>
 
       <div class="case-filter" role="tablist" aria-label="Filter projects by category">
@@ -182,175 +235,163 @@
 
       <div class="case-list">
 
-        <article class="case" data-category="automation">
-          <div class="case__art" style="--tint: var(--accent-primary-tint)">
-            <svg viewBox="0 0 480 320" class="case__svg">
-              <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
-              <g stroke="rgba(18,20,28,0.14)" stroke-width="1.4">
-                <line x1="70" y1="230" x2="70" y2="200"/>
-                <line x1="95" y1="230" x2="95" y2="170"/>
-                <line x1="120" y1="230" x2="120" y2="210"/>
-                <line x1="145" y1="230" x2="145" y2="150"/>
-                <line x1="170" y1="230" x2="170" y2="190"/>
-                <line x1="195" y1="230" x2="195" y2="130"/>
-                <line x1="220" y1="230" x2="220" y2="180"/>
-                <line x1="245" y1="230" x2="245" y2="205"/>
-                <line x1="270" y1="230" x2="270" y2="160"/>
-              </g>
-              <path d="M60 100 C 140 60, 180 60, 230 95" fill="none" stroke="var(--accent-primary)" stroke-width="1.6" stroke-dasharray="4 5"/>
-              <circle cx="60" cy="100" r="5" fill="var(--accent-primary)"/>
-              <circle cx="230" cy="95" r="5" fill="var(--accent-primary)"/>
-              <rect x="300" y="70" width="140" height="120" rx="12" fill="#fff" stroke="rgba(18,20,28,0.1)"/>
-              <circle cx="322" cy="98" r="4" fill="var(--accent-flow)"/>
-              <line x1="336" y1="98" x2="415" y2="98" stroke="rgba(18,20,28,0.16)" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="322" cy="122" r="4" fill="var(--accent-flow)"/>
-              <line x1="336" y1="122" x2="400" y2="122" stroke="rgba(18,20,28,0.16)" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="322" cy="146" r="4" fill="var(--accent-flow)"/>
-              <line x1="336" y1="146" x2="408" y2="146" stroke="rgba(18,20,28,0.16)" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="case__body">
-            <span class="case__category">Automation &amp; Agentic AI</span>
-            <span class="case__index">01</span>
-            <h3>AI Meeting Copilot</h3>
-            <p class="case__desc">Sits inside a live meeting and thinks alongside you — reads the conversation as it happens, flags risks the moment they surface, suggests the next question, tracks action items, and has a summary ready before the call ends.</p>
-            <div class="case__flow">
-              <span class="flow__step flow__step--in">live meeting audio</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step">real-time analysis</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step flow__step--out">summary + action items</span>
+        <!-- 01 Meeting copilot -->
+        <article class="case reveal" data-category="automation">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
+                </defs>
+                <g class="viz__wave" fill="url(#g1)">
+                  <rect x="40"  y="120" width="8" height="60" rx="4" style="--d:0s"/>
+                  <rect x="58"  y="100" width="8" height="100" rx="4" style="--d:.15s"/>
+                  <rect x="76"  y="130" width="8" height="40" rx="4" style="--d:.3s"/>
+                  <rect x="94"  y="90"  width="8" height="120" rx="4" style="--d:.45s"/>
+                  <rect x="112" y="115" width="8" height="70" rx="4" style="--d:.6s"/>
+                  <rect x="130" y="95"  width="8" height="110" rx="4" style="--d:.75s"/>
+                  <rect x="148" y="125" width="8" height="50" rx="4" style="--d:.9s"/>
+                  <rect x="166" y="105" width="8" height="90" rx="4" style="--d:1.05s"/>
+                </g>
+                <path class="viz__flow" d="M185 150 C 230 150, 235 150, 280 150" stroke="url(#g1)" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+                <circle class="viz__pulse" cx="232" cy="150" r="4" fill="#FF5B2E"/>
+                <g transform="translate(290 70)">
+                  <rect width="150" height="160" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)"/>
+                  <circle cx="24" cy="30" r="5" fill="#FF5B2E"/><rect x="40" y="26" width="90" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <circle cx="24" cy="62" r="5" fill="#FF8A5C"/><rect x="40" y="58" width="70" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <circle cx="24" cy="94" r="5" fill="#E9D8BF"/><rect x="40" y="90" width="80" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <rect x="18" y="122" width="114" height="22" rx="11" fill="url(#g1)" opacity=".9"/>
+                  <text x="75" y="137" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#0C0C0D">summary ready</text>
+                </g>
+              </svg>
             </div>
-            <div class="case__stack">
-              <span>n8n</span><span>Gemini</span><span>Airtable</span><span>Chrome Extension</span>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">01</span></div>
+              <h3>AI Meeting Copilot</h3>
+              <p class="case__desc">Sits inside a live meeting and thinks alongside you — reads the conversation as it happens, flags risks the moment they surface, suggests the next question, tracks action items, and has a summary ready before the call ends.</p>
+              <div class="case__flow">
+                <span class="flow__step flow__step--in">live meeting audio</span><span class="flow__arrow">→</span><span class="flow__step">real-time analysis</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">summary + action items</span>
+              </div>
+              <div class="case__stack"><span>n8n</span><span>Gemini</span><span>Airtable</span><span>Chrome Extension</span></div>
             </div>
           </div>
         </article>
 
-        <article class="case case--reverse" data-category="automation">
-          <div class="case__art" style="--tint: var(--accent-flow-tint)">
-            <svg viewBox="0 0 480 320" class="case__svg">
-              <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
-              <g fill="none" stroke="rgba(18,20,28,0.16)" stroke-width="1.5" stroke-dasharray="3 5">
-                <path d="M150 160 C 220 100, 260 90, 330 90"/>
-                <path d="M150 160 C 230 160, 260 160, 340 160"/>
-                <path d="M150 160 C 220 220, 260 230, 330 232"/>
-              </g>
-              <circle cx="150" cy="160" r="11" fill="var(--accent-primary)"/>
-              <circle cx="330" cy="90" r="6" fill="var(--accent-flow)"/>
-              <circle cx="340" cy="160" r="6" fill="var(--accent-flow)"/>
-              <circle cx="330" cy="232" r="6" fill="var(--accent-flow)"/>
-              <g transform="translate(330,90)">
-                <circle r="15" fill="#fff" stroke="rgba(18,20,28,0.1)"/>
-                <path d="M-5 0 L -1 5 L 6 -6" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </g>
-              <text x="360" y="165" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(18,20,28,0.45)">vendor</text>
-              <text x="345" y="240" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(18,20,28,0.45)">records</text>
-            </svg>
-          </div>
-          <div class="case__body">
-            <span class="case__category">Automation &amp; Agentic AI</span>
-            <span class="case__index">02</span>
-            <h3>ReFab Revolution — Ops Automation</h3>
-            <p class="case__desc">AI voice-agent system for a sustainable textile-recycling business. Calls, approvals, and record-keeping run as one connected system instead of separate manual steps — including automatic vendor-invoice verification when something looks off.</p>
-            <div class="case__flow">
-              <span class="flow__step flow__step--in">vendor / customer call</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step">AI voice agent routes &amp; logs</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step flow__step--out">verified &amp; recorded</span>
+        <!-- 02 ReFab -->
+        <article class="case reveal" data-category="automation">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#FF8A5C"/><stop offset="1" stop-color="#E9D8BF"/></linearGradient>
+                </defs>
+                <g fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5">
+                  <path id="p1" d="M130 150 C 200 90, 260 80, 340 80"/>
+                  <path id="p2" d="M130 150 C 210 150, 270 150, 350 150"/>
+                  <path id="p3" d="M130 150 C 200 210, 260 222, 340 222"/>
+                </g>
+                <g class="viz__orbit">
+                  <circle cx="130" cy="150" r="30" fill="none" stroke="url(#g2)" stroke-width="1" stroke-dasharray="3 6"/>
+                </g>
+                <circle cx="130" cy="150" r="14" fill="url(#g2)"/>
+                <circle class="viz__ping" cx="130" cy="150" r="14" fill="none" stroke="#FF8A5C" stroke-width="2"/>
+                <g fill="#fff">
+                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+                  <circle r="4" fill="#E9D8BF"><animateMotion dur="2s" begin=".4s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.6s" begin=".8s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+                </g>
+                <g>
+                  <circle cx="340" cy="80" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)"/>
+                  <path d="M333 80 l5 5 l9 -10" fill="none" stroke="#FF5B2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="350" cy="150" r="9" fill="#E9D8BF"/>
+                  <circle cx="340" cy="222" r="9" fill="#FF8A5C"/>
+                  <g font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)">
+                    <text x="376" y="154">vendor</text><text x="366" y="226">records</text><text x="366" y="84">verified</text>
+                  </g>
+                </g>
+              </svg>
             </div>
-            <div class="case__stack">
-              <span>Vapi</span><span>n8n</span><span>JavaScript</span><span>Google Sheets / Gmail API</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="case" data-category="fullstack">
-          <div class="case__art" style="--tint: var(--accent-primary-tint)">
-            <svg viewBox="0 0 480 320" class="case__svg">
-              <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
-              <line x1="50" y1="240" x2="430" y2="240" stroke="rgba(18,20,28,0.14)" stroke-width="1.4"/>
-              <g stroke="rgba(18,20,28,0.35)" stroke-width="1.4">
-                <line x1="80" y1="190" x2="80" y2="150"/>
-                <line x1="130" y1="210" x2="130" y2="170"/>
-                <line x1="180" y1="200" x2="180" y2="140"/>
-                <line x1="230" y1="175" x2="230" y2="120"/>
-                <line x1="280" y1="165" x2="280" y2="100"/>
-                <line x1="330" y1="150" x2="330" y2="90"/>
-                <line x1="380" y1="130" x2="380" y2="70"/>
-              </g>
-              <g fill="rgba(18,20,28,0.55)">
-                <rect x="74" y="160" width="12" height="24"/>
-                <rect x="124" y="178" width="12" height="26"/>
-                <rect x="174" y="150" width="12" height="34"/>
-                <rect x="224" y="130" width="12" height="34"/>
-                <rect x="274" y="112" width="12" height="40"/>
-                <rect x="324" y="100" width="12" height="38"/>
-                <rect x="374" y="82" width="12" height="34"/>
-              </g>
-              <path d="M60 210 C 150 200, 230 150, 300 120 S 400 80, 420 65" fill="none" stroke="var(--accent-primary)" stroke-width="2"/>
-              <circle cx="230" cy="150" r="5" fill="var(--accent-flow)"/>
-              <circle cx="330" cy="112" r="5" fill="var(--accent-flow)"/>
-            </svg>
-          </div>
-          <div class="case__body">
-            <span class="case__category">Full-Stack Apps</span>
-            <span class="case__index">03</span>
-            <h3>Zynth — AI Trading Intelligence</h3>
-            <p class="case__desc">Full-stack SaaS platform for trade journaling and analysis — authentication, analytics dashboards, and AI-assisted reviews that turn raw trade logs into structured insight.</p>
-            <div class="case__flow">
-              <span class="flow__step flow__step--in">trade logged</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step">AI-assisted review</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step flow__step--out">dashboard &amp; insight</span>
-            </div>
-            <div class="case__stack">
-              <span>React</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>OpenAI API</span>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">02</span></div>
+              <h3>ReFab Revolution — Ops Automation</h3>
+              <p class="case__desc">AI voice-agent system for a sustainable textile-recycling business. Calls, approvals, and record-keeping run as one connected system instead of separate manual steps — including automatic vendor-invoice verification when something looks off.</p>
+              <div class="case__flow">
+                <span class="flow__step flow__step--in">vendor / customer call</span><span class="flow__arrow">→</span><span class="flow__step">AI voice agent routes &amp; logs</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">verified &amp; recorded</span>
+              </div>
+              <div class="case__stack"><span>Vapi</span><span>n8n</span><span>JavaScript</span><span>Google Sheets / Gmail API</span></div>
             </div>
           </div>
         </article>
 
-        <article class="case case--reverse" data-category="fullstack">
-          <div class="case__art" style="--tint: var(--accent-flow-tint)">
-            <svg viewBox="0 0 480 320" class="case__svg">
-              <rect x="0" y="0" width="480" height="320" fill="var(--tint)" rx="20"/>
-              <g fill="rgba(18,20,28,0.28)">
-                <circle cx="90" cy="120" r="4"/>
-                <circle cx="130" cy="160" r="4"/>
-                <circle cx="110" cy="200" r="4"/>
-                <circle cx="160" cy="110" r="4"/>
-                <circle cx="180" cy="180" r="4"/>
-                <circle cx="220" cy="140" r="4"/>
-                <circle cx="150" cy="230" r="4"/>
-                <circle cx="240" cy="200" r="4"/>
-                <circle cx="270" cy="150" r="4"/>
-                <circle cx="200" cy="90" r="4"/>
-              </g>
-              <circle cx="345" cy="120" r="26" fill="var(--accent-primary)" opacity="0.12"/>
-              <circle cx="345" cy="120" r="16" fill="var(--accent-primary)" opacity="0.18"/>
-              <circle cx="345" cy="120" r="8" fill="var(--accent-primary)"/>
-              <line x1="345" y1="120" x2="400" y2="90" stroke="var(--accent-primary)" stroke-width="1.4" stroke-dasharray="3 4"/>
-              <rect x="400" y="66" width="60" height="48" rx="8" fill="#fff" stroke="rgba(18,20,28,0.1)"/>
-              <text x="430" y="85" font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(18,20,28,0.5)" text-anchor="middle">ALERT</text>
-              <text x="430" y="100" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--accent-primary)" text-anchor="middle">flagged</text>
-            </svg>
-          </div>
-          <div class="case__body">
-            <span class="case__category">Full-Stack Apps</span>
-            <span class="case__index">04</span>
-            <h3>AI Anomaly Detection System</h3>
-            <p class="case__desc">Security-monitoring platform trained on Isolation Forest models, with dashboards and role-based access so the right person sees the right alert — not just a flat log of noise.</p>
-            <div class="case__flow">
-              <span class="flow__step flow__step--in">event data</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step">anomaly scoring</span>
-              <span class="flow__arrow">→</span>
-              <span class="flow__step flow__step--out">flagged &amp; routed</span>
+        <!-- 03 Zynth -->
+        <article class="case reveal" data-category="fullstack">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
+                  <linearGradient id="g3f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5B2E" stop-opacity=".35"/><stop offset="1" stop-color="#FF5B2E" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g stroke="rgba(255,255,255,0.07)"><line x1="40" y1="70" x2="440" y2="70"/><line x1="40" y1="130" x2="440" y2="130"/><line x1="40" y1="190" x2="440" y2="190"/><line x1="40" y1="250" x2="440" y2="250"/></g>
+                <g class="viz__candles">
+                  <g style="--d:0s"><line x1="80" y1="190" x2="80" y2="150" stroke="#E9D8BF"/><rect x="74" y="160" width="12" height="24" fill="#E9D8BF"/></g>
+                  <g style="--d:.12s"><line x1="130" y1="215" x2="130" y2="170" stroke="#E9D8BF"/><rect x="124" y="178" width="12" height="26" fill="#E9D8BF"/></g>
+                  <g style="--d:.24s"><line x1="180" y1="200" x2="180" y2="140" stroke="#FF5B2E"/><rect x="174" y="150" width="12" height="34" fill="#FF5B2E"/></g>
+                  <g style="--d:.36s"><line x1="230" y1="175" x2="230" y2="115" stroke="#FF5B2E"/><rect x="224" y="128" width="12" height="36" fill="#FF5B2E"/></g>
+                  <g style="--d:.48s"><line x1="280" y1="165" x2="280" y2="100" stroke="#FF5B2E"/><rect x="274" y="112" width="12" height="40" fill="#FF5B2E"/></g>
+                  <g style="--d:.6s"><line x1="330" y1="150" x2="330" y2="88" stroke="#E9D8BF"/><rect x="324" y="100" width="12" height="38" fill="#E9D8BF"/></g>
+                  <g style="--d:.72s"><line x1="380" y1="130" x2="380" y2="68" stroke="#FF5B2E"/><rect x="374" y="82" width="12" height="34" fill="#FF5B2E"/></g>
+                </g>
+                <path d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60 L430 260 L60 260Z" fill="url(#g3f)"/>
+                <path class="viz__line" d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60" fill="none" stroke="url(#g3)" stroke-width="2.5" stroke-linecap="round" pathLength="1"/>
+                <circle class="viz__pulse" cx="300" cy="120" r="5" fill="#fff"/>
+              </svg>
             </div>
-            <div class="case__stack">
-              <span>Python</span><span>Flask</span><span>Isolation Forest</span><span>SQLite</span>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">03</span></div>
+              <h3>Zynth — AI Trading Intelligence</h3>
+              <p class="case__desc">Full-stack SaaS platform for trade journaling and analysis — authentication, analytics dashboards, and AI-assisted reviews that turn raw trade logs into structured insight.</p>
+              <div class="case__flow">
+                <span class="flow__step flow__step--in">trade logged</span><span class="flow__arrow">→</span><span class="flow__step">AI-assisted review</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">dashboard &amp; insight</span>
+              </div>
+              <div class="case__stack"><span>React</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>OpenAI API</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Anomaly -->
+        <article class="case reveal" data-category="fullstack">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="g4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E9D8BF" stop-opacity=".5"/><stop offset="1" stop-color="#E9D8BF" stop-opacity="0"/></radialGradient>
+                </defs>
+                <g class="viz__dots" fill="rgba(255,255,255,0.4)">
+                  <circle cx="90" cy="120" r="4" style="--d:0s"/><circle cx="130" cy="160" r="4" style="--d:.3s"/><circle cx="110" cy="205" r="4" style="--d:.6s"/>
+                  <circle cx="165" cy="110" r="4" style="--d:.9s"/><circle cx="185" cy="185" r="4" style="--d:1.2s"/><circle cx="225" cy="140" r="4" style="--d:1.5s"/>
+                  <circle cx="150" cy="235" r="4" style="--d:1.8s"/><circle cx="245" cy="205" r="4" style="--d:2.1s"/><circle cx="270" cy="155" r="4" style="--d:.45s"/>
+                  <circle cx="205" cy="90" r="4" style="--d:.75s"/><circle cx="75" cy="170" r="4" style="--d:1.05s"/><circle cx="215" cy="240" r="4" style="--d:1.35s"/>
+                </g>
+                <circle cx="352" cy="125" r="64" fill="url(#g4)" class="viz__glow"/>
+                <circle class="viz__ping viz__ping--pink" cx="352" cy="125" r="10" fill="none" stroke="#E9D8BF" stroke-width="2"/>
+                <circle cx="352" cy="125" r="9" fill="#E9D8BF"/>
+                <line x1="352" y1="125" x2="405" y2="85" stroke="#E9D8BF" stroke-width="1.4" stroke-dasharray="3 4" class="viz__flow"/>
+                <g transform="translate(395 55)">
+                  <rect width="70" height="52" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(233,216,191,0.5)"/>
+                  <text x="35" y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(255,255,255,0.6)">ALERT</text>
+                  <text x="35" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#E9D8BF">flagged</text>
+                </g>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">04</span></div>
+              <h3>AI Anomaly Detection System</h3>
+              <p class="case__desc">Security-monitoring platform trained on Isolation Forest models, with dashboards and role-based access so the right person sees the right alert — not just a flat log of noise.</p>
+              <div class="case__flow">
+                <span class="flow__step flow__step--in">event data</span><span class="flow__arrow">→</span><span class="flow__step">anomaly scoring</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">flagged &amp; routed</span>
+              </div>
+              <div class="case__stack"><span>Python</span><span>Flask</span><span>Isolation Forest</span><span>SQLite</span></div>
             </div>
           </div>
         </article>
@@ -360,33 +401,33 @@
   </section>
 
   <!-- ================= SKILLS ================= -->
-  <section class="section section--alt" id="skills">
+  <section class="section" id="skills">
     <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag">04 — Skills</p>
-        <h2>What I build with</h2>
+        <p class="section__tag" data-scramble>04 — Skills</p>
+        <h2 class="split-words">What I build with</h2>
       </div>
 
       <div class="skills">
-        <div class="skills__group">
+        <div class="skills__group reveal spot">
           <h4>Automation &amp; Agentic AI</h4>
           <div class="chips">
             <span>n8n</span><span>Agentic AI Workflows</span><span>OAuth2 API Integrations</span><span>Webhooks</span><span>OpenAI / Claude APIs</span><span>Google Gemini</span><span>LLM Applications</span><span>Prompt Engineering</span><span>Local LLM Deployment (Gemma 3)</span>
           </div>
         </div>
-        <div class="skills__group">
+        <div class="skills__group reveal spot">
           <h4>Integrations</h4>
           <div class="chips">
             <span>GoHighLevel (GHL)</span><span>Elation EMR</span><span>Airtable</span><span>DataForSEO</span><span>Shopify Admin API</span><span>Google Search Console</span><span>Google Workspace APIs</span>
           </div>
         </div>
-        <div class="skills__group">
+        <div class="skills__group reveal spot">
           <h4>Full-Stack Development</h4>
           <div class="chips">
             <span>Python</span><span>Flask</span><span>React.js</span><span>REST APIs</span><span>PostgreSQL</span><span>Supabase</span><span>SQLite</span><span>JWT Auth</span><span>JavaScript</span><span>HTML5 / CSS3</span><span>C++</span><span>SQL</span>
           </div>
         </div>
-        <div class="skills__group">
+        <div class="skills__group reveal spot">
           <h4>Tools</h4>
           <div class="chips">
             <span>Git</span><span>GitHub</span><span>Postman</span><span>VS Code</span>
@@ -397,18 +438,20 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section class="section section--inverted" id="contact">
-    <div class="section__inner contact">
+  <section class="section section--contact" id="contact">
+    <div class="edge-glow edge-glow--left edge-glow--low" aria-hidden="true"></div>
+    <div class="edge-glow edge-glow--right edge-glow--low" aria-hidden="true"></div>
+    <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag">05 — Contact</p>
-        <h2>Let's talk</h2>
+        <p class="section__tag" data-scramble>05 — Contact</p>
+        <h2 class="contact__big split-words">Have a system that's <em class="grad">already broken?</em> Let's fix it.</h2>
       </div>
 
       <div class="contact__grid">
         <div class="contact__info">
-          <p class="contact__line">Have a system that needs building — or one that's already broken? Tell me what you're working on.</p>
-          <div class="contact__links">
-            <a href="mailto:shahrukhamza770@gmail.com" class="contact__card">
+          <p class="contact__line reveal">Or one that needs building from scratch. Tell me what you're working on.</p>
+          <div class="contact__links reveal">
+            <a href="mailto:shahrukhamza770@gmail.com" class="contact__card" data-cursor="Write">
               <span class="contact__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
               </span>
@@ -416,11 +459,9 @@
                 <span class="contact__label">Email</span>
                 <span class="contact__value">shahrukhamza770@gmail.com</span>
               </span>
-              <span class="contact__arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-              </span>
+              <span class="contact__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
             </a>
-            <a href="https://www.linkedin.com/in/shahrukh-hamza-91a12828a" target="_blank" rel="noopener" class="contact__card">
+            <a href="https://www.linkedin.com/in/shahrukh-hamza-91a12828a" target="_blank" rel="noopener" class="contact__card" data-cursor="Open">
               <span class="contact__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><line x1="7.5" y1="10" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="0.6" fill="currentColor"/><path d="M11.5 16.5v-4a2.5 2.5 0 0 1 5 0v4"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/></svg>
               </span>
@@ -428,11 +469,9 @@
                 <span class="contact__label">LinkedIn</span>
                 <span class="contact__value">/in/shahrukh-hamza-91a12828a</span>
               </span>
-              <span class="contact__arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-              </span>
+              <span class="contact__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
             </a>
-            <a href="https://github.com/shahrukhhamza" target="_blank" rel="noopener" class="contact__card">
+            <a href="https://github.com/shahrukhhamza" target="_blank" rel="noopener" class="contact__card" data-cursor="Open">
               <span class="contact__icon">
                 <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.1 6.8 9.4.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.6 1 1.5 1 2.6 0 3.8-2.4 4.6-4.6 4.9.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5C19.1 20.1 22 16.4 22 12c0-5.5-4.5-10-10-10z"/></svg>
               </span>
@@ -440,14 +479,12 @@
                 <span class="contact__label">GitHub</span>
                 <span class="contact__value">github.com/shahrukhhamza</span>
               </span>
-              <span class="contact__arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-              </span>
+              <span class="contact__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
             </a>
           </div>
         </div>
 
-        <form class="contact__form" id="contactForm" action="https://formspree.io/f/xbgjjdgy" method="POST">
+        <form class="contact__form reveal spot" id="contactForm" action="https://formspree.io/f/xbgjjdgy" method="POST">
           <div class="form__row">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" required autocomplete="name">
@@ -460,8 +497,9 @@
             <label for="cf-message">What are you building?</label>
             <textarea id="cf-message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary form__submit">
+          <button type="submit" class="btn btn--primary form__submit" data-magnetic>
             <span class="form__submit-text">Send message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
           <p class="form__status" id="formStatus" aria-live="polite"></p>
         </form>
@@ -472,10 +510,14 @@
 </main>
 
 <footer class="footer">
-  <p>© 2026 Shahrukh Hamza</p>
-  <a href="#hero" class="footer__top">Back to top ↑</a>
+  <div class="footer__giant" aria-hidden="true">SHAHRUKH HAMZA</div>
+  <div class="footer__row">
+    <p>© 2026 Shahrukh Hamza</p>
+    <a href="#hero" class="footer__top" data-magnetic data-cursor="Top">Back to top ↑</a>
+  </div>
 </footer>
 
+<script src="lenis.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
