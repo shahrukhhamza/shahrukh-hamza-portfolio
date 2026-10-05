@@ -49,10 +49,10 @@
 <header class="nav" id="nav">
   <a href="#hero" class="nav__mark" data-magnetic>SH<span class="nav__dot">.</span></a>
   <nav class="nav__links">
-    <a href="#about" data-nav="about">About</a>
+    <a href="#services" data-nav="services">Services</a>
+    <a href="#work" data-nav="work">Work</a>
     <a href="#experience" data-nav="experience">Experience</a>
-    <a href="#projects" data-nav="projects">Projects</a>
-    <a href="#skills" data-nav="skills">Skills</a>
+    <a href="#approach" data-nav="approach">Approach</a>
     <span class="nav__pill" id="navPill"></span>
   </nav>
   <a href="#contact" class="nav__cta" data-nav="contact" data-magnetic><span>Let's talk</span></a>
@@ -62,10 +62,10 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about"><i>01</i>About</a>
-  <a href="#experience"><i>02</i>Experience</a>
-  <a href="#projects"><i>03</i>Projects</a>
-  <a href="#skills"><i>04</i>Skills</a>
+  <a href="#services"><i>01</i>Services</a>
+  <a href="#work"><i>02</i>Work</a>
+  <a href="#experience"><i>03</i>Experience</a>
+  <a href="#approach"><i>04</i>Approach</a>
   <a href="#contact"><i>05</i>Contact</a>
 </div>
 
@@ -78,17 +78,22 @@
     <div class="edge-glow edge-glow--right" aria-hidden="true"></div>
 
     <div class="hero__content">
-      <p class="eyebrow"><span class="eyebrow__pulse"></span>Available for new projects</p>
-      <h1 class="hero__headline" id="heroHeadline" aria-label="I build systems that keep working when things don't go to plan.">
-        <span class="split-line">I build <em class="grad">systems</em> that</span>
-        <span class="split-line">keep working when</span>
-        <span class="split-line">things <span class="strike">don't</span> go to plan.</span>
+      <p class="eyebrow"><span class="eyebrow__pulse"></span>AI Automation Engineer · Available for projects</p>
+      <h1 class="hero__headline" id="heroHeadline">
+        <span class="split-line">I <em class="grad">automate</em> the work</span>
+        <span class="split-line">your team still does</span>
+        <span class="split-line">by hand.</span>
       </h1>
-      <p class="hero__role"><span class="hero__role-prefix">&gt;</span> <span id="roleText">AI Automation Engineer</span><span class="caret"></span></p>
-      <p class="hero__sub">Agentic AI, workflow automation, and full-stack engineering — for the parts of a business that are still held together by hand.</p>
+      <p class="hero__role"><span class="hero__role-prefix">&gt; recently shipped:</span> <span id="roleText">CRM ↔ EMR integrations</span><span class="caret"></span></p>
+      <p class="hero__sub">I connect your CRM, EMR, inbox and internal tools, add AI agents where decisions happen, and build the dashboards around them — production systems designed to keep running when something goes wrong.</p>
       <div class="hero__actions">
-        <a href="#projects" class="btn btn--primary" data-magnetic><span>See the work</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#contact" class="btn btn--ghost" data-magnetic><span>Get in touch</span></a>
+        <a href="#work" class="btn btn--primary" data-magnetic><span>See my work</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn--ghost" data-magnetic><span>Start a project</span></a>
+      </div>
+      <div class="hero__proof">
+        <div><strong data-count-to="40" data-suffix="+">0+</strong><span>production automations shipped</span></div>
+        <div><strong>3+ yrs</strong><span>building AI systems for real businesses</span></div>
+        <div><strong>4</strong><span>industries — healthcare, fintech, lending, e-commerce</span></div>
       </div>
     </div>
 
@@ -104,12 +109,12 @@
         <div class="chip chip--4"><i></i>Supabase</div>
         <div class="portrait__tag">
           <strong>Shahrukh Hamza</strong>
-          <span>3+ years shipping production AI systems</span>
+          <span>AI Automation Engineer</span>
         </div>
       </div>
     </div>
 
-    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span>Scroll</a>
+    <a href="#services" class="scroll-hint" aria-label="Scroll down"><span></span>Scroll</a>
   </section>
 
   <!-- ================= MARQUEE ================= -->
@@ -128,40 +133,284 @@
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section class="section" id="about">
-    <div class="section__inner">
+  <!-- ================= SERVICES ================= -->
+  <section class="section" id="services">
+    <div class="section__inner section__inner--wide">
       <div class="section__head">
-        <p class="section__tag" data-scramble>01 — About</p>
-        <h2 class="split-words">What I actually do</h2>
+        <p class="section__tag" data-scramble>01 — What I do</p>
+        <h2 class="split-words">Three ways I help businesses run on autopilot</h2>
+        <p class="section__intro reveal">Most projects combine all three: integrations move the data, AI makes the decisions, and an app gives your team a place to see and control it.</p>
       </div>
-      <div class="about__grid">
-        <div class="about__text">
-          <p class="reveal">I build AI-powered products and automation systems — the kind that take something manual, fragile, or disconnected and turn it into something that just works.</p>
-          <p class="reveal">My work sits at the intersection of agentic AI, workflow automation, and full-stack engineering: connecting systems that were never designed to talk to each other, building AI agents that make decisions mid-workflow, and shipping the software around them so it's actually usable.</p>
-          <p class="reveal">The part I care about most is what happens when things don't go as planned — when the AI is wrong, when two systems disagree, when the happy path breaks.</p>
+      <div class="services">
+        <article class="service reveal spot">
+          <div class="service__top"><span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/><path d="M14 12l2 2 2-2"/></svg></span><span class="service__num">01</span></div>
+          <h3>Workflow automation &amp; integrations</h3>
+          <p class="service__desc">Connect the tools you already use so data moves on its own — no more copy-pasting between systems.</p>
+          <ul class="service__list">
+            <li>CRM, EMR, inbox &amp; spreadsheet sync</li>
+            <li>OAuth2 / REST API integrations &amp; webhooks</li>
+            <li>n8n workflows running in production</li>
+          </ul>
+          <p class="service__proof"><b>Example</b>GoHighLevel ↔ Elation EMR live two-way sync</p>
+        </article>
+        <article class="service reveal spot">
+          <div class="service__top"><span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 16h5"/><path d="M2 12v3M22 12v3"/></svg></span><span class="service__num">02</span></div>
+          <h3>AI agents &amp; LLM pipelines</h3>
+          <p class="service__desc">Put AI where a real decision happens — answering calls, reading documents, classifying replies — with fallbacks for when it's wrong.</p>
+          <ul class="service__list">
+            <li>AI voice agents for calls &amp; approvals</li>
+            <li>Document &amp; data extraction (LLM + rules)</li>
+            <li>Classification, routing &amp; content generation</li>
+          </ul>
+          <p class="service__proof"><b>Example</b>Hybrid regex + local LLM clinical-data extraction</p>
+        </article>
+        <article class="service reveal spot">
+          <div class="service__top"><span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 20v-6M8 14h5M16 14v3"/></svg></span><span class="service__num">03</span></div>
+          <h3>Full-stack apps &amp; dashboards</h3>
+          <p class="service__desc">Ship the product around the automation: secure dashboards, admin tools and analytics your team actually uses.</p>
+          <ul class="service__list">
+            <li>React, Next.js &amp; Flask applications</li>
+            <li>Supabase &amp; PostgreSQL backends</li>
+            <li>Auth, roles &amp; analytics dashboards</li>
+          </ul>
+          <p class="service__proof"><b>Example</b>Supabase migration — dashboard ~30–40% faster</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <blockquote class="about__quote reveal">
-            Most engineers build for the happy path.<br><span class="grad">I build for what happens when it breaks.</span>
-          </blockquote>
-        </div>
-        <div class="about__proof">
-          <div class="proof reveal spot">
-            <span class="proof__tag">01 / Scale</span>
-            <span class="proof__num grad" data-count-to="40" data-suffix="+">0+</span>
-            <span class="proof__label">live production automations shipped across real business workflows</span>
+  <!-- ================= WORK ================= -->
+  <section class="section" id="work">
+    <div class="section__inner section__inner--wide">
+      <div class="section__head">
+        <p class="section__tag" data-scramble>02 — Selected work</p>
+        <h2 class="split-words">Real systems, running in production</h2>
+        <p class="section__intro reveal">Client work and products I designed, built and shipped end to end. Each one starts with a problem a business actually had.</p>
+      </div>
+
+      <div class="case-filter" role="tablist" aria-label="Filter projects by category">
+        <button class="case-filter__btn is-active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+        <button class="case-filter__btn" data-filter="automation" role="tab" aria-selected="false">Automation &amp; Agentic AI</button>
+        <button class="case-filter__btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack Apps</button>
+      </div>
+
+      <div class="case-list">
+
+        <!-- 01 Featured: CRM <-> EMR -->
+        <article class="case case--featured reveal" data-category="automation">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="g0" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
+                </defs>
+                <g fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5">
+                  <path id="f1" d="M170 128 C 215 82, 265 82, 310 128"/>
+                  <path id="f2" d="M310 172 C 265 218, 215 218, 170 172"/>
+                </g>
+                <circle r="4" fill="#FF5B2E"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
+                <circle r="4" fill="#FF5B2E"><animateMotion dur="2.2s" begin="1.1s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
+                <circle r="4" fill="#E9D8BF"><animateMotion dur="2.2s" begin=".5s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
+                <circle r="4" fill="#E9D8BF"><animateMotion dur="2.2s" begin="1.6s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
+                <g transform="translate(40 105)">
+                  <rect width="130" height="90" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/>
+                  <text x="65" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#F2EFEA">CRM</text>
+                  <text x="65" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(255,255,255,0.5)">GoHighLevel</text>
+                </g>
+                <g transform="translate(310 105)">
+                  <rect width="130" height="90" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/>
+                  <text x="65" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="600" fill="#F2EFEA">EMR</text>
+                  <text x="65" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="rgba(255,255,255,0.5)">Elation</text>
+                </g>
+                <circle class="viz__ping" cx="240" cy="150" r="18" fill="none" stroke="#FF5B2E" stroke-width="1.5"/>
+                <circle cx="240" cy="150" r="18" fill="url(#g0)"/>
+                <text x="240" y="154" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500" fill="#0C0C0D">n8n</text>
+                <text x="240" y="262" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.45)">patient records · tags · appointments</text>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Client work · Healthcare</span><span class="case__index">01</span></div>
+              <h3>CRM ↔ EMR Integration</h3>
+              <p class="case__summary">Live two-way sync between a healthcare CRM and EMR that had never talked to each other.</p>
+              <dl class="case__story">
+                <div><dt>Problem</dt><dd>Patient records, tags and appointments lived in two systems — GoHighLevel and Elation EMR — that had never synced.</dd></div>
+                <div><dt>What I built</dt><dd>n8n workflows connecting both platforms through OAuth2 and REST APIs, with live two-way sync of records, tags and appointments.</dd></div>
+                <div><dt>Outcome</dt><dd>17+ automations running live in production at Trilles AI.</dd></div>
+              </dl>
+              <div class="case__stack"><span>n8n</span><span>GoHighLevel</span><span>Elation EMR</span><span>OAuth2</span><span>REST APIs</span></div>
+            </div>
           </div>
-          <div class="proof reveal spot">
-            <span class="proof__tag">02 / Performance</span>
-            <span class="proof__num grad">30–40%</span>
-            <span class="proof__label">dashboard performance improvement after a backend migration &amp; rebuild</span>
+        </article>
+
+        <!-- 01 Meeting copilot -->
+        <article class="case reveal" data-category="automation">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
+                </defs>
+                <g class="viz__wave" fill="url(#g1)">
+                  <rect x="40"  y="120" width="8" height="60" rx="4" style="--d:0s"/>
+                  <rect x="58"  y="100" width="8" height="100" rx="4" style="--d:.15s"/>
+                  <rect x="76"  y="130" width="8" height="40" rx="4" style="--d:.3s"/>
+                  <rect x="94"  y="90"  width="8" height="120" rx="4" style="--d:.45s"/>
+                  <rect x="112" y="115" width="8" height="70" rx="4" style="--d:.6s"/>
+                  <rect x="130" y="95"  width="8" height="110" rx="4" style="--d:.75s"/>
+                  <rect x="148" y="125" width="8" height="50" rx="4" style="--d:.9s"/>
+                  <rect x="166" y="105" width="8" height="90" rx="4" style="--d:1.05s"/>
+                </g>
+                <path class="viz__flow" d="M185 150 C 230 150, 235 150, 280 150" stroke="url(#g1)" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+                <circle class="viz__pulse" cx="232" cy="150" r="4" fill="#FF5B2E"/>
+                <g transform="translate(290 70)">
+                  <rect width="150" height="160" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)"/>
+                  <circle cx="24" cy="30" r="5" fill="#FF5B2E"/><rect x="40" y="26" width="90" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <circle cx="24" cy="62" r="5" fill="#FF8A5C"/><rect x="40" y="58" width="70" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <circle cx="24" cy="94" r="5" fill="#E9D8BF"/><rect x="40" y="90" width="80" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+                  <rect x="18" y="122" width="114" height="22" rx="11" fill="url(#g1)" opacity=".9"/>
+                  <text x="75" y="137" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#0C0C0D">summary ready</text>
+                </g>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">02</span></div>
+              <h3>AI Meeting Copilot</h3>
+              <p class="case__summary">A real-time AI assistant that sits inside live meetings.</p>
+              <dl class="case__story">
+                <div><dt>Problem</dt><dd>Risks, follow-up questions and action items get lost mid-call, and notes are only written after the meeting ends.</dd></div>
+                <div><dt>What I built</dt><dd>A Chrome extension backed by n8n and Gemini that reads the conversation as it happens, flags risks, suggests the next question and tracks action items.</dd></div>
+                <div><dt>Outcome</dt><dd>A clean summary and action list are ready before the call ends.</dd></div>
+              </dl>
+              <div class="case__stack"><span>n8n</span><span>Gemini</span><span>Airtable</span><span>Chrome Extension</span></div>
+            </div>
           </div>
-          <div class="proof reveal spot">
-            <span class="proof__tag">03 / Integration</span>
-            <span class="proof__num grad">CRM &harr; EMR</span>
-            <span class="proof__label">two systems that had never synced, connected via OAuth2 &amp; webhooks</span>
+        </article>
+
+        <!-- 02 ReFab -->
+        <article class="case reveal" data-category="automation">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#FF8A5C"/><stop offset="1" stop-color="#E9D8BF"/></linearGradient>
+                </defs>
+                <g fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5">
+                  <path id="p1" d="M130 150 C 200 90, 260 80, 340 80"/>
+                  <path id="p2" d="M130 150 C 210 150, 270 150, 350 150"/>
+                  <path id="p3" d="M130 150 C 200 210, 260 222, 340 222"/>
+                </g>
+                <g class="viz__orbit">
+                  <circle cx="130" cy="150" r="30" fill="none" stroke="url(#g2)" stroke-width="1" stroke-dasharray="3 6"/>
+                </g>
+                <circle cx="130" cy="150" r="14" fill="url(#g2)"/>
+                <circle class="viz__ping" cx="130" cy="150" r="14" fill="none" stroke="#FF8A5C" stroke-width="2"/>
+                <g fill="#fff">
+                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+                  <circle r="4" fill="#E9D8BF"><animateMotion dur="2s" begin=".4s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.6s" begin=".8s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+                </g>
+                <g>
+                  <circle cx="340" cy="80" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)"/>
+                  <path d="M333 80 l5 5 l9 -10" fill="none" stroke="#FF5B2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="350" cy="150" r="9" fill="#E9D8BF"/>
+                  <circle cx="340" cy="222" r="9" fill="#FF8A5C"/>
+                  <g font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)">
+                    <text x="376" y="154">vendor</text><text x="366" y="226">records</text><text x="366" y="84">verified</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">03</span></div>
+              <h3>ReFab Revolution — Ops Automation</h3>
+              <p class="case__summary">An AI voice agent that runs calls, approvals and records as one system.</p>
+              <dl class="case__story">
+                <div><dt>Problem</dt><dd>A textile-recycling business handled calls, approvals and record-keeping as separate manual steps.</dd></div>
+                <div><dt>What I built</dt><dd>A Vapi voice agent that answers vendor and customer calls, routes and logs them through n8n into Google Sheets and Gmail, and verifies vendor invoices automatically.</dd></div>
+                <div><dt>Outcome</dt><dd>One connected system — and invoices that look off get flagged without anyone checking by hand.</dd></div>
+              </dl>
+              <div class="case__stack"><span>Vapi</span><span>n8n</span><span>JavaScript</span><span>Google Sheets / Gmail API</span></div>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <!-- 03 Zynth -->
+        <article class="case reveal" data-category="fullstack">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
+                  <linearGradient id="g3f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5B2E" stop-opacity=".35"/><stop offset="1" stop-color="#FF5B2E" stop-opacity="0"/></linearGradient>
+                </defs>
+                <g stroke="rgba(255,255,255,0.07)"><line x1="40" y1="70" x2="440" y2="70"/><line x1="40" y1="130" x2="440" y2="130"/><line x1="40" y1="190" x2="440" y2="190"/><line x1="40" y1="250" x2="440" y2="250"/></g>
+                <g class="viz__candles">
+                  <g style="--d:0s"><line x1="80" y1="190" x2="80" y2="150" stroke="#E9D8BF"/><rect x="74" y="160" width="12" height="24" fill="#E9D8BF"/></g>
+                  <g style="--d:.12s"><line x1="130" y1="215" x2="130" y2="170" stroke="#E9D8BF"/><rect x="124" y="178" width="12" height="26" fill="#E9D8BF"/></g>
+                  <g style="--d:.24s"><line x1="180" y1="200" x2="180" y2="140" stroke="#FF5B2E"/><rect x="174" y="150" width="12" height="34" fill="#FF5B2E"/></g>
+                  <g style="--d:.36s"><line x1="230" y1="175" x2="230" y2="115" stroke="#FF5B2E"/><rect x="224" y="128" width="12" height="36" fill="#FF5B2E"/></g>
+                  <g style="--d:.48s"><line x1="280" y1="165" x2="280" y2="100" stroke="#FF5B2E"/><rect x="274" y="112" width="12" height="40" fill="#FF5B2E"/></g>
+                  <g style="--d:.6s"><line x1="330" y1="150" x2="330" y2="88" stroke="#E9D8BF"/><rect x="324" y="100" width="12" height="38" fill="#E9D8BF"/></g>
+                  <g style="--d:.72s"><line x1="380" y1="130" x2="380" y2="68" stroke="#FF5B2E"/><rect x="374" y="82" width="12" height="34" fill="#FF5B2E"/></g>
+                </g>
+                <path d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60 L430 260 L60 260Z" fill="url(#g3f)"/>
+                <path class="viz__line" d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60" fill="none" stroke="url(#g3)" stroke-width="2.5" stroke-linecap="round" pathLength="1"/>
+                <circle class="viz__pulse" cx="300" cy="120" r="5" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">04</span></div>
+              <h3>Zynth — AI Trading Intelligence</h3>
+              <p class="case__summary">A SaaS platform that turns raw trade logs into structured insight.</p>
+              <dl class="case__story">
+                <div><dt>Problem</dt><dd>Traders log trades but rarely turn them into patterns they can learn from.</dd></div>
+                <div><dt>What I built</dt><dd>A full-stack platform with authentication, trade journaling, analytics dashboards and AI-assisted trade reviews.</dd></div>
+                <div><dt>Outcome</dt><dd>Raw trade logs become structured, reviewable insight in a single dashboard.</dd></div>
+              </dl>
+              <div class="case__stack"><span>React</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>OpenAI API</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Anomaly -->
+        <article class="case reveal" data-category="fullstack">
+          <div class="case__tilt spot">
+            <div class="case__art">
+              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="g4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E9D8BF" stop-opacity=".5"/><stop offset="1" stop-color="#E9D8BF" stop-opacity="0"/></radialGradient>
+                </defs>
+                <g class="viz__dots" fill="rgba(255,255,255,0.4)">
+                  <circle cx="90" cy="120" r="4" style="--d:0s"/><circle cx="130" cy="160" r="4" style="--d:.3s"/><circle cx="110" cy="205" r="4" style="--d:.6s"/>
+                  <circle cx="165" cy="110" r="4" style="--d:.9s"/><circle cx="185" cy="185" r="4" style="--d:1.2s"/><circle cx="225" cy="140" r="4" style="--d:1.5s"/>
+                  <circle cx="150" cy="235" r="4" style="--d:1.8s"/><circle cx="245" cy="205" r="4" style="--d:2.1s"/><circle cx="270" cy="155" r="4" style="--d:.45s"/>
+                  <circle cx="205" cy="90" r="4" style="--d:.75s"/><circle cx="75" cy="170" r="4" style="--d:1.05s"/><circle cx="215" cy="240" r="4" style="--d:1.35s"/>
+                </g>
+                <circle cx="352" cy="125" r="64" fill="url(#g4)" class="viz__glow"/>
+                <circle class="viz__ping viz__ping--pink" cx="352" cy="125" r="10" fill="none" stroke="#E9D8BF" stroke-width="2"/>
+                <circle cx="352" cy="125" r="9" fill="#E9D8BF"/>
+                <line x1="352" y1="125" x2="405" y2="85" stroke="#E9D8BF" stroke-width="1.4" stroke-dasharray="3 4" class="viz__flow"/>
+                <g transform="translate(395 55)">
+                  <rect width="70" height="52" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(233,216,191,0.5)"/>
+                  <text x="35" y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(255,255,255,0.6)">ALERT</text>
+                  <text x="35" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#E9D8BF">flagged</text>
+                </g>
+              </svg>
+            </div>
+            <div class="case__body">
+              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">05</span></div>
+              <h3>AI Anomaly Detection System</h3>
+              <p class="case__summary">Security monitoring that routes the right alert to the right person.</p>
+              <dl class="case__story">
+                <div><dt>Problem</dt><dd>Security logs are mostly noise, and real anomalies get buried in a flat list.</dd></div>
+                <div><dt>What I built</dt><dd>Isolation Forest anomaly scoring with dashboards and role-based access control.</dd></div>
+                <div><dt>Outcome</dt><dd>Anomalies are scored, flagged and routed to the right role instead of drowning in a log.</dd></div>
+              </dl>
+              <div class="case__stack"><span>Python</span><span>Flask</span><span>Isolation Forest</span><span>SQLite</span></div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -170,8 +419,8 @@
   <section class="section" id="experience">
     <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag" data-scramble>02 — Experience</p>
-        <h2 class="split-words">Where this has been put to work</h2>
+        <p class="section__tag" data-scramble>03 — Experience</p>
+        <h2 class="split-words">Where I've put this to work</h2>
       </div>
 
       <div class="timeline" id="timeline">
@@ -218,185 +467,39 @@
     </div>
   </section>
 
-  <!-- ================= PROJECTS ================= -->
-  <section class="section" id="projects">
-    <div class="section__inner section__inner--wide">
-      <div class="section__head">
-        <p class="section__tag" data-scramble>03 — Selected Work</p>
-        <h2 class="split-words">Systems I've designed and shipped</h2>
-        <p class="section__intro reveal">Independent products — conceived, architected, and shipped solo.</p>
+  <!-- ================= APPROACH ================= -->
+  <section class="section" id="approach">
+    <div class="section__inner">
+      <div class="section__head section__head--wide">
+        <p class="section__tag" data-scramble>04 — How I work</p>
+        <h2 class="split-words">Most engineers build for the happy path. <em class="grad">I build for when it breaks.</em></h2>
       </div>
-
-      <div class="case-filter" role="tablist" aria-label="Filter projects by category">
-        <button class="case-filter__btn is-active" data-filter="all" role="tab" aria-selected="true">All Work</button>
-        <button class="case-filter__btn" data-filter="automation" role="tab" aria-selected="false">Automation &amp; Agentic AI</button>
-        <button class="case-filter__btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack Apps</button>
+      <div class="approach__lead reveal">
+        <p>I've spent 3+ years shipping AI systems into real businesses. The lesson is always the same: the demo works — production is where the AI gets something wrong, two systems disagree, and an API stops responding.</p>
+        <p>That's the part I design for, so what I build keeps working long after launch day.</p>
       </div>
-
-      <div class="case-list">
-
-        <!-- 01 Meeting copilot -->
-        <article class="case reveal" data-category="automation">
-          <div class="case__tilt spot">
-            <div class="case__art">
-              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
-                <defs>
-                  <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
-                </defs>
-                <g class="viz__wave" fill="url(#g1)">
-                  <rect x="40"  y="120" width="8" height="60" rx="4" style="--d:0s"/>
-                  <rect x="58"  y="100" width="8" height="100" rx="4" style="--d:.15s"/>
-                  <rect x="76"  y="130" width="8" height="40" rx="4" style="--d:.3s"/>
-                  <rect x="94"  y="90"  width="8" height="120" rx="4" style="--d:.45s"/>
-                  <rect x="112" y="115" width="8" height="70" rx="4" style="--d:.6s"/>
-                  <rect x="130" y="95"  width="8" height="110" rx="4" style="--d:.75s"/>
-                  <rect x="148" y="125" width="8" height="50" rx="4" style="--d:.9s"/>
-                  <rect x="166" y="105" width="8" height="90" rx="4" style="--d:1.05s"/>
-                </g>
-                <path class="viz__flow" d="M185 150 C 230 150, 235 150, 280 150" stroke="url(#g1)" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
-                <circle class="viz__pulse" cx="232" cy="150" r="4" fill="#FF5B2E"/>
-                <g transform="translate(290 70)">
-                  <rect width="150" height="160" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.14)"/>
-                  <circle cx="24" cy="30" r="5" fill="#FF5B2E"/><rect x="40" y="26" width="90" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
-                  <circle cx="24" cy="62" r="5" fill="#FF8A5C"/><rect x="40" y="58" width="70" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
-                  <circle cx="24" cy="94" r="5" fill="#E9D8BF"/><rect x="40" y="90" width="80" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
-                  <rect x="18" y="122" width="114" height="22" rx="11" fill="url(#g1)" opacity=".9"/>
-                  <text x="75" y="137" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#0C0C0D">summary ready</text>
-                </g>
-              </svg>
-            </div>
-            <div class="case__body">
-              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">01</span></div>
-              <h3>AI Meeting Copilot</h3>
-              <p class="case__desc">Sits inside a live meeting and thinks alongside you — reads the conversation as it happens, flags risks the moment they surface, suggests the next question, tracks action items, and has a summary ready before the call ends.</p>
-              <div class="case__flow">
-                <span class="flow__step flow__step--in">live meeting audio</span><span class="flow__arrow">→</span><span class="flow__step">real-time analysis</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">summary + action items</span>
-              </div>
-              <div class="case__stack"><span>n8n</span><span>Gemini</span><span>Airtable</span><span>Chrome Extension</span></div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 02 ReFab -->
-        <article class="case reveal" data-category="automation">
-          <div class="case__tilt spot">
-            <div class="case__art">
-              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
-                <defs>
-                  <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#FF8A5C"/><stop offset="1" stop-color="#E9D8BF"/></linearGradient>
-                </defs>
-                <g fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5">
-                  <path id="p1" d="M130 150 C 200 90, 260 80, 340 80"/>
-                  <path id="p2" d="M130 150 C 210 150, 270 150, 350 150"/>
-                  <path id="p3" d="M130 150 C 200 210, 260 222, 340 222"/>
-                </g>
-                <g class="viz__orbit">
-                  <circle cx="130" cy="150" r="30" fill="none" stroke="url(#g2)" stroke-width="1" stroke-dasharray="3 6"/>
-                </g>
-                <circle cx="130" cy="150" r="14" fill="url(#g2)"/>
-                <circle class="viz__ping" cx="130" cy="150" r="14" fill="none" stroke="#FF8A5C" stroke-width="2"/>
-                <g fill="#fff">
-                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
-                  <circle r="4" fill="#E9D8BF"><animateMotion dur="2s" begin=".4s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
-                  <circle r="4" fill="#FF5B2E"><animateMotion dur="2.6s" begin=".8s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
-                </g>
-                <g>
-                  <circle cx="340" cy="80" r="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)"/>
-                  <path d="M333 80 l5 5 l9 -10" fill="none" stroke="#FF5B2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="350" cy="150" r="9" fill="#E9D8BF"/>
-                  <circle cx="340" cy="222" r="9" fill="#FF8A5C"/>
-                  <g font-family="JetBrains Mono, monospace" font-size="11" fill="rgba(255,255,255,0.55)">
-                    <text x="376" y="154">vendor</text><text x="366" y="226">records</text><text x="366" y="84">verified</text>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div class="case__body">
-              <div class="case__meta"><span class="case__category">Automation &amp; Agentic AI</span><span class="case__index">02</span></div>
-              <h3>ReFab Revolution — Ops Automation</h3>
-              <p class="case__desc">AI voice-agent system for a sustainable textile-recycling business. Calls, approvals, and record-keeping run as one connected system instead of separate manual steps — including automatic vendor-invoice verification when something looks off.</p>
-              <div class="case__flow">
-                <span class="flow__step flow__step--in">vendor / customer call</span><span class="flow__arrow">→</span><span class="flow__step">AI voice agent routes &amp; logs</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">verified &amp; recorded</span>
-              </div>
-              <div class="case__stack"><span>Vapi</span><span>n8n</span><span>JavaScript</span><span>Google Sheets / Gmail API</span></div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 03 Zynth -->
-        <article class="case reveal" data-category="fullstack">
-          <div class="case__tilt spot">
-            <div class="case__art">
-              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
-                <defs>
-                  <linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#FF5B2E"/><stop offset="1" stop-color="#FF8A5C"/></linearGradient>
-                  <linearGradient id="g3f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5B2E" stop-opacity=".35"/><stop offset="1" stop-color="#FF5B2E" stop-opacity="0"/></linearGradient>
-                </defs>
-                <g stroke="rgba(255,255,255,0.07)"><line x1="40" y1="70" x2="440" y2="70"/><line x1="40" y1="130" x2="440" y2="130"/><line x1="40" y1="190" x2="440" y2="190"/><line x1="40" y1="250" x2="440" y2="250"/></g>
-                <g class="viz__candles">
-                  <g style="--d:0s"><line x1="80" y1="190" x2="80" y2="150" stroke="#E9D8BF"/><rect x="74" y="160" width="12" height="24" fill="#E9D8BF"/></g>
-                  <g style="--d:.12s"><line x1="130" y1="215" x2="130" y2="170" stroke="#E9D8BF"/><rect x="124" y="178" width="12" height="26" fill="#E9D8BF"/></g>
-                  <g style="--d:.24s"><line x1="180" y1="200" x2="180" y2="140" stroke="#FF5B2E"/><rect x="174" y="150" width="12" height="34" fill="#FF5B2E"/></g>
-                  <g style="--d:.36s"><line x1="230" y1="175" x2="230" y2="115" stroke="#FF5B2E"/><rect x="224" y="128" width="12" height="36" fill="#FF5B2E"/></g>
-                  <g style="--d:.48s"><line x1="280" y1="165" x2="280" y2="100" stroke="#FF5B2E"/><rect x="274" y="112" width="12" height="40" fill="#FF5B2E"/></g>
-                  <g style="--d:.6s"><line x1="330" y1="150" x2="330" y2="88" stroke="#E9D8BF"/><rect x="324" y="100" width="12" height="38" fill="#E9D8BF"/></g>
-                  <g style="--d:.72s"><line x1="380" y1="130" x2="380" y2="68" stroke="#FF5B2E"/><rect x="374" y="82" width="12" height="34" fill="#FF5B2E"/></g>
-                </g>
-                <path d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60 L430 260 L60 260Z" fill="url(#g3f)"/>
-                <path class="viz__line" d="M60 220 C 150 210, 230 150, 300 120 S 400 80, 430 60" fill="none" stroke="url(#g3)" stroke-width="2.5" stroke-linecap="round" pathLength="1"/>
-                <circle class="viz__pulse" cx="300" cy="120" r="5" fill="#fff"/>
-              </svg>
-            </div>
-            <div class="case__body">
-              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">03</span></div>
-              <h3>Zynth — AI Trading Intelligence</h3>
-              <p class="case__desc">Full-stack SaaS platform for trade journaling and analysis — authentication, analytics dashboards, and AI-assisted reviews that turn raw trade logs into structured insight.</p>
-              <div class="case__flow">
-                <span class="flow__step flow__step--in">trade logged</span><span class="flow__arrow">→</span><span class="flow__step">AI-assisted review</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">dashboard &amp; insight</span>
-              </div>
-              <div class="case__stack"><span>React</span><span>Flask</span><span>Python</span><span>PostgreSQL</span><span>OpenAI API</span></div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 04 Anomaly -->
-        <article class="case reveal" data-category="fullstack">
-          <div class="case__tilt spot">
-            <div class="case__art">
-              <svg viewBox="0 0 480 300" class="viz" preserveAspectRatio="xMidYMid slice">
-                <defs>
-                  <radialGradient id="g4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E9D8BF" stop-opacity=".5"/><stop offset="1" stop-color="#E9D8BF" stop-opacity="0"/></radialGradient>
-                </defs>
-                <g class="viz__dots" fill="rgba(255,255,255,0.4)">
-                  <circle cx="90" cy="120" r="4" style="--d:0s"/><circle cx="130" cy="160" r="4" style="--d:.3s"/><circle cx="110" cy="205" r="4" style="--d:.6s"/>
-                  <circle cx="165" cy="110" r="4" style="--d:.9s"/><circle cx="185" cy="185" r="4" style="--d:1.2s"/><circle cx="225" cy="140" r="4" style="--d:1.5s"/>
-                  <circle cx="150" cy="235" r="4" style="--d:1.8s"/><circle cx="245" cy="205" r="4" style="--d:2.1s"/><circle cx="270" cy="155" r="4" style="--d:.45s"/>
-                  <circle cx="205" cy="90" r="4" style="--d:.75s"/><circle cx="75" cy="170" r="4" style="--d:1.05s"/><circle cx="215" cy="240" r="4" style="--d:1.35s"/>
-                </g>
-                <circle cx="352" cy="125" r="64" fill="url(#g4)" class="viz__glow"/>
-                <circle class="viz__ping viz__ping--pink" cx="352" cy="125" r="10" fill="none" stroke="#E9D8BF" stroke-width="2"/>
-                <circle cx="352" cy="125" r="9" fill="#E9D8BF"/>
-                <line x1="352" y1="125" x2="405" y2="85" stroke="#E9D8BF" stroke-width="1.4" stroke-dasharray="3 4" class="viz__flow"/>
-                <g transform="translate(395 55)">
-                  <rect width="70" height="52" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(233,216,191,0.5)"/>
-                  <text x="35" y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(255,255,255,0.6)">ALERT</text>
-                  <text x="35" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#E9D8BF">flagged</text>
-                </g>
-              </svg>
-            </div>
-            <div class="case__body">
-              <div class="case__meta"><span class="case__category">Full-Stack Apps</span><span class="case__index">04</span></div>
-              <h3>AI Anomaly Detection System</h3>
-              <p class="case__desc">Security-monitoring platform trained on Isolation Forest models, with dashboards and role-based access so the right person sees the right alert — not just a flat log of noise.</p>
-              <div class="case__flow">
-                <span class="flow__step flow__step--in">event data</span><span class="flow__arrow">→</span><span class="flow__step">anomaly scoring</span><span class="flow__arrow">→</span><span class="flow__step flow__step--out">flagged &amp; routed</span>
-              </div>
-              <div class="case__stack"><span>Python</span><span>Flask</span><span>Isolation Forest</span><span>SQLite</span></div>
-            </div>
-          </div>
-        </article>
-
-      </div>
+      <ol class="process">
+          <li class="step reveal spot">
+            <span class="step__num">01</span>
+            <h3>Map the workflow</h3>
+            <p>Understand how the work happens today, which systems are involved and exactly where it breaks.</p>
+          </li>
+          <li class="step reveal spot">
+            <span class="step__num">02</span>
+            <h3>Build &amp; connect</h3>
+            <p>Integrate the systems and add AI only where it makes a real decision — not everywhere it could.</p>
+          </li>
+          <li class="step reveal spot">
+            <span class="step__num">03</span>
+            <h3>Design for failure</h3>
+            <p>Plan for wrong AI outputs, API timeouts and conflicting data, with fallbacks, retries and alerts.</p>
+          </li>
+          <li class="step reveal spot">
+            <span class="step__num">04</span>
+            <h3>Ship &amp; hand over</h3>
+            <p>Deploy to production, document how it works and make sure your team can trust it.</p>
+          </li>
+      </ol>
     </div>
   </section>
 
@@ -404,8 +507,8 @@
   <section class="section" id="skills">
     <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag" data-scramble>04 — Skills</p>
-        <h2 class="split-words">What I build with</h2>
+        <p class="section__tag" data-scramble>05 — Toolbox</p>
+        <h2 class="split-words">The stack behind the work</h2>
       </div>
 
       <div class="skills">
@@ -443,13 +546,13 @@
     <div class="edge-glow edge-glow--right edge-glow--low" aria-hidden="true"></div>
     <div class="section__inner">
       <div class="section__head">
-        <p class="section__tag" data-scramble>05 — Contact</p>
+        <p class="section__tag" data-scramble>06 — Contact</p>
         <h2 class="contact__big split-words">Have a system that's <em class="grad">already broken?</em> Let's fix it.</h2>
       </div>
 
       <div class="contact__grid">
         <div class="contact__info">
-          <p class="contact__line reveal">Or one that needs building from scratch. Tell me what you're working on.</p>
+          <p class="contact__line reveal">Or a manual process eating your team's week, or an AI idea you want in production. Tell me what you're working on — I read every message myself.</p>
           <div class="contact__links reveal">
             <a href="mailto:shahrukhamza770@gmail.com" class="contact__card" data-cursor="Write">
               <span class="contact__icon">

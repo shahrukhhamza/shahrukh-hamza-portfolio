@@ -599,7 +599,7 @@ const countObserver = new IntersectionObserver((entries) => {
 $$('[data-count-to]').forEach((el) => countObserver.observe(el));
 
 /* ================= HERO ROLE TYPEWRITER ================= */
-const roles = ['AI Automation Engineer', 'Agentic AI Builder', 'Workflow Architect', 'Full-Stack Developer'];
+const roles = ['CRM ↔ EMR integrations', 'AI voice agents', 'document extraction pipelines', 'lead-gen automation', 'analytics dashboards'];
 function typeRoles() {
   const el = $('#roleText');
   if (!el || reduceMotion) return;
